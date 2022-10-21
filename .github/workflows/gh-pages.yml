@@ -24,7 +24,7 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           REPOSITORY_NAME: m4n5ter/m4n5ter.github.io
           BRANCH: master
           FOLDER: book
