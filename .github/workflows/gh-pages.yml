@@ -22,8 +22,16 @@ jobs:
       - run: mdbook build
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./book
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          REPOSITORY_NAME: m4n5ter/m4n5ter.github.io
+          BRANCH: master
+          FOLDER: book
+
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   if: ${{ github.ref == 'refs/heads/main' }}
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./book
